@@ -33,11 +33,32 @@
 // PROBLEM 3 - The missing value
 // ============================================================================
 // Amazon and Microsoft ask you to derive an algorithm that will inspect an
-// array of of numbers that contains the values between 0 and the length of the
+// array of numbers that contains the values between 0 and the length of the
 // list, inclusive, and find the missing value. For example, you may be given an
 // array that of length 6 that contains
 // [0, 2, 3, 4, 5, 6]
 // It is your job to determine that the missing value from the array is 1.
+
+//input = Ordered Array
+//output = integer
+//missingValue([0,2,4]) => 3
+//missingValue([0,1,3,4,5,6]) => 2
+function missingValue(array) {
+    //Iterate through array starting at 0
+    for (let i = 0; i < array.length; i++) {
+        //value current element is the value of the next element - 1
+        if (array[i] === array[i + 1] - 1) {
+            continue;
+        } else {
+            return array[i + 1] - 1;
+        }
+    }
+
+    return null;
+}
+
+Time: O(n);
+Space: O(1);
 
 // PROBLEM 4 - Stack min
 // ============================================================================
