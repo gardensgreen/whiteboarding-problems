@@ -76,6 +76,18 @@ function reverse(ll) {
     //Traverse through linked list updating pointer
 }
 
+var reverseList = function (head) {
+    prev = null;
+    curr = head;
+    while (curr != null) {
+        let temp = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = temp;
+    }
+    return prev;
+};
+
 // Time: O(n ^ 2);
 // Space: O(1);
 
@@ -122,6 +134,13 @@ function missingValue(array) {
 //Facebook asks you to write the tests cases for testing a ballpoint pen.
 // What would you consider to be good tests for the pen?
 // Try to be as exhaustive as possible.
+
+// 1. It should have a constructor that sets properties, retracted = false
+// 2. It should have a method retract
+// 3. The method retract sets the retracted variable to true
+// 4. it should have a method called write
+// 5. This method sets the retracted variable to false
+// 6. Any other methods (writeSomething) rely on retracted === false;
 
 // PROBLEM 6 - OOParking Lot
 // ============================================================================
