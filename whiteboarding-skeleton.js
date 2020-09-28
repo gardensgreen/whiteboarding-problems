@@ -30,6 +30,32 @@
 // list, that is, a list that is made of nodes between which there is a unidirectional
 // association as in the following image.
 
+//Input = Singly-linked list
+//Output => Singly-linked list
+//reverse(linkedList})
+
+function reverse(ll) {
+    //create a new list which you will return
+    let reversed = new LinkedList();
+    let current = this.head;
+    while (ll.length > 1) {
+        while (current.next !== this.tail) {
+            current = current.next;
+        }
+        let removedTail = ll.removeFromTail();
+        this.tail = current;
+        current.next = null;
+        reversed.addToTail(removedTail);
+    }
+    reversed.addToTail(this.head);
+    return reversed;
+
+    //Traverse through linked list updating pointer
+}
+
+// Time: O(n ^ 2);
+// Space: O(1);
+
 // PROBLEM 3 - The missing value
 // ============================================================================
 // Amazon and Microsoft ask you to derive an algorithm that will inspect an
@@ -57,8 +83,8 @@ function missingValue(array) {
     return null;
 }
 
-Time: O(n);
-Space: O(1);
+// Time: O(n);
+// Space: O(1);
 
 // PROBLEM 4 - Stack min
 // ============================================================================
